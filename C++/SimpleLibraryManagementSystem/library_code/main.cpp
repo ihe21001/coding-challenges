@@ -6,12 +6,6 @@
 
 using namespace std; 
 
-// Compile:
-// g++ main.cpp Library.cpp Book.cpp -o main
-
-// Run:
-// .\main
-
 int main(){
     Library myLibrary;
     string title, author, isbn;
