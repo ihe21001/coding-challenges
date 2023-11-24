@@ -9,9 +9,9 @@ In this challenge, you're hosting a party with an odd number of guests. Each cou
   - The first line contains \( G \), the number of guests.
   - The second line contains a space-separated list of \( G \) integers, representing the invitation codes of the guests.
 - Constraints:
-  - \( 1 \leq N \leq 50 \)
+  - \( 1 <= N <= 50 \)
   - \( 0 < C < 2^{31} \)
-  - \( 3 \leq G < 1000 \)
+  - \( 3 <= G < 1000 \)
 
 ## Output Format
 - For each test case, output a line in the format: “Case #x: C”, where \( C \) is the invitation code of the guest who is alone.
