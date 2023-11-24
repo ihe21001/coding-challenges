@@ -1,0 +1,3 @@
+cd "c:\Users\00351285\Documents\Kattis\Kattis\GuessingGame\"
+if ($?) { gcc GuessingGame.c -o GuessingGame }
+if ($?) { Get-Content input.txt | .\GuessingGame | Set-Content output.txt }
