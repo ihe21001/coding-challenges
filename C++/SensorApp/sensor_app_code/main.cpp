@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <vector>
 #include <numeric>
@@ -16,8 +17,8 @@ struct SensorData {
 
 // simulate sensor data reading
 SensorData readSensorData() {
-    static default_random_engine generator; 
-    
+    default_random_engine generator; 
+
     static uniform_real_distribution<double> temperatureDistribution(20.0, 30.0);
     static uniform_real_distribution<double> humidityDistribution(30.0, 60.0);
     static uniform_real_distribution<double> pressureDistribution(980.0, 1020.0);
@@ -33,12 +34,11 @@ SensorData readSensorData() {
 
 // calculate the average of values in a vector
 double calculateAverage(const vector<double>& values) {
-    // Calculate the sum of the vector's values and divide by the number of values
     return accumulate(values.begin(), values.end(), 0.0) / values.size();
 }
 
 int main() {
-    const int numberOfReadings = 100; // Number of sensor readings to simulate
+    const int numberOfReadings = 100;
 
     // sensor readings
     vector<double> temperatureReadings;
