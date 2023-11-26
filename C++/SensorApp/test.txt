@@ -1,0 +1,1 @@
+g++ main.cpp -o sensor_app -std=c++11 -pthread && ./sensor_app
