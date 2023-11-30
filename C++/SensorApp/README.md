@@ -17,3 +17,6 @@ g++ main.cpp -o main
 
 ### Run:
 .\main
+
+## NOTE
+Needs MinGW-w64 with POSIX threads support

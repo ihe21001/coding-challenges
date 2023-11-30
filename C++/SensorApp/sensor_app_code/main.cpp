@@ -17,7 +17,7 @@ struct SensorData {
 
 // simulate sensor data reading
 SensorData readSensorData() {
-    default_random_engine generator; 
+    static default_random_engine generator(chrono::system_clock::now().time_since_epoch().count());
 
     static uniform_real_distribution<double> temperatureDistribution(20.0, 30.0);
     static uniform_real_distribution<double> humidityDistribution(30.0, 60.0);
@@ -29,6 +29,7 @@ SensorData readSensorData() {
     data.humidity = humidityDistribution(generator);
     data.pressure = pressureDistribution(generator);
     
+
     return data; 
 }
 

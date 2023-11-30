@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <conio.h>  // Only if you are on Windows
+#include <conio.h>  // Only Windows
 #include <unistd.h>
 #include <ctime>
 
