@@ -13,7 +13,7 @@ class Snake {
             //Move tail:
             if (!tail.empty()){
                 for (auto t = tail.rbegin(); t != tail.rend() -1; ++t) {
-                    *t = *(t - 1);
+                    *t = *(t + 1);
                 }
                 tail.front() = head;
             }
@@ -52,8 +52,8 @@ class Fruit {
         Fruit(int x, int y) : fruit(x,y){}
 
         void Respawn(int width, int hight) {
-            fruit.first = rand() % (width);
-            fruit.second = rand() % (hight);
+            fruit.first = 1 + rand() % (width - 1);
+            fruit.second = 1 + rand() % (hight - 1);
         }
 
         // getter:
@@ -82,13 +82,13 @@ class Game {
                 renderGame(); //draw the game to the window
 
                 // sleep for a short time
-                usleep(50000); // sleep for 500 milliseconds or 0.5 seconds
+                usleep(0.5*100000); // sleep for 0.5 seconds
             }
         }
 
     private:
         // Game board:
-        static const int width = 100;
+        static const int width = 50;
         static const int height = 20;
         static const char SNAKE_HEAD = 'O';
         static const char SNAKE_TAIL = 'o';
@@ -168,12 +168,12 @@ class Game {
             auto snakeTail_pos = snake.getTailPosition();
             for (const auto& pos : snakeTail_pos) {
                 gameBoard[pos.first][pos.second] = SNAKE_TAIL;
-                //std::cout << pos.first << "  " << pos.second << std::endl;
             }
 
             //place fruit on board:
             auto fruit_pos = fruit.getFruitPosition();
             gameBoard[fruit_pos.first][fruit_pos.second] = FRUIT;
+            
 
             // Print the board
             for (size_t i = 0; i < height; i++) {
@@ -186,6 +186,7 @@ class Game {
         }
 
 };
+
 
 int main()
 {   
